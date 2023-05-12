@@ -7,7 +7,7 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 
-<Button href="/games">
+<Button default href="/games" >
     <Label>
         Games
     </Label>
