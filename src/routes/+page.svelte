@@ -6,7 +6,7 @@
 <h1>Welcome to AereoArcade</h1>
 
 
-<Button href="/games">
+<Button default href="/games" >
     <Label>
         Games
     </Label>
