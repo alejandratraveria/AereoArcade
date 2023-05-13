@@ -62,7 +62,7 @@
                 type="password"
                 placeholder="password"
             />
-                <button on:click={sendLogin}>Log In</button>
+            <button on:click={sendLogin}>Log In</button>
         </Overlay>
     </nav>
 
@@ -80,8 +80,29 @@
             </button>
         </a>
     </div>
+    <div class="bottom">
+        <a href="/multiplayer">
+            <button class="multi">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="trivial.png" />
+            </button>
+        </a>
+        <a href="/multiplayer">
+            <button class="multi">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="bolaMundo.png" />
+            </button>
+        </a>
+    </div>
+</main>
+
 
 <style>
+    nav {
+        display: flex;
+        background-color: whitesmoke;
+        justify-content: space-around;
+    }
     div {
         display: flex;
         justify-content: space-between;
@@ -109,8 +130,9 @@
     .main {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         height: 100%;
+
     }
     .bottom {
         display: flex;
@@ -121,7 +143,7 @@
     main {
         display:flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 20px;
     }
     div {
