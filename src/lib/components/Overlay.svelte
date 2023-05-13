@@ -6,7 +6,7 @@
     <button class="material-symbols-outlined" on:click={() => (active = false)}
         >close</button
     >
-    <slot />
+    <slot/>
 </section>
 
 <style>

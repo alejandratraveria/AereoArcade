@@ -71,7 +71,7 @@
         </Overlay>
     </div>
 
-    <div>
+    <div class="play">
         <Button default href="/singleplayer">
             <!-- svelte-ignore a11y-missing-attribute -->
             <img class="modes" src="singleplayer.png"/>
@@ -99,16 +99,16 @@
 
 <style>
     .gamesImg {
-        width: 450px;
+        width: 1000px;
         aspect-ratio: 3;
         
     }
     .modes {
-        width: 150px;
+        width: 500px;
         aspect-ratio: 2;
     }
     .stampsImg {
-        height: 125%; 
+        height: 500%; 
         width: 125;
         object-fit: contain
     }
@@ -125,10 +125,9 @@
         display:flex;
         flex-direction: column;
         align-items: center;
-<<<<<<< HEAD
-=======
         gap: 20px;
->>>>>>> cae91a205ef9052c9d050531b48df17db6457edf
+        height: 100%;
+        width: 100%;
     }
     div {
         display: flex;
