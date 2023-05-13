@@ -1,24 +1,31 @@
 <script lang="ts">
   import Fab, { Icon } from '@smui/fab';
+  import Button, { Label } from '@smui/button';
 </script>
 
-<h1>Welcome to AereoArcade</h1>
-
-
-<div class="flexy">
-    <div class="margins">
-      <Fab href="/gamesHub">
+<main>
+    <div>
         <!-- svelte-ignore a11y-missing-attribute -->
-        <img class="image" src="earth.png"/>
-      </Fab>
+        <h1><img class="gamesImg" src="AereoArcadeIcon.png"/></h1>
     </div>
-</div>
+    <Button default href="/games" >
+        <Label>SinglePlayer</Label>
+    </Button>
+
+    <Button default href="/games" >
+        <Label>MultiPlayer</Label>
+    </Button>
+
+
+</main>
 
 <style>
-  .image {
-    height: 125%; 
-    width: 125;
-    object-fit: contain
-  }
-
+    .gamesImg {
+        width: 150px;
+        aspect-ratio: 2;
+    }
+    main {
+        display:flex;
+        flex-direction: column;
+    }
 </style>
