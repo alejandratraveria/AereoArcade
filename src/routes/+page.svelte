@@ -5,21 +5,25 @@
 
 <main>
     <div class="header">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <h1><img class="gamesImg" src="AereoArcadeIcon.png"/></h1>
     </div>
 
     <div>
         <Button default href="/gamesHub">
+            <!-- svelte-ignore a11y-missing-attribute -->
             <img class="modes" src="singleplayer.png"/>
         </Button>
 
         <Button default href="/gamesHub">
+            <!-- svelte-ignore a11y-missing-attribute -->
             <img class="modes" src="multiplayer.png"/>
         </Button>
     </div>
 
     <div class="bottom">
         <Button default>
+            <!-- svelte-ignore a11y-missing-attribute -->
             <img class="modes" src="trivial.png"/>
         </Button>
 
@@ -32,9 +36,6 @@
 </main>
 
 <style>
-    .header {
-        
-    }
     .gamesImg {
         width: 450px;
         aspect-ratio: 3;
