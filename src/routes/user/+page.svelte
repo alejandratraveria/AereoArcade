@@ -1,6 +1,7 @@
 <script>
+	export let data;
 	let pos = 1;
-	let points = 10000;
+	let points = data.points;
 
     const logout = () => fetch("/logout", {
             method: "GET",
