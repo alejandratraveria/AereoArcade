@@ -27,7 +27,7 @@
             <img class="modes" src="trivial.png"/>
         </Button>
 
-        <Fab href="/games">
+        <Fab href="/stamps">
             <!-- svelte-ignore a11y-missing-attribute -->
             <img class="stampsImg" src="stamps.png"/>
         </Fab>
