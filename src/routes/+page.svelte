@@ -1,8 +1,5 @@
 <script lang="ts">
-  import Button, { Label } from '@smui/button';
-  import Overlay from '$lib/components/Overlay.svelte';
-    import Fab, { Icon } from '@smui/fab';
-    import { text } from 'svelte/internal';
+    import Overlay from "$lib/components/Overlay.svelte";
 
     let login: boolean = false;
     let signup: boolean = false;
@@ -14,54 +11,81 @@
     let password: string;
 
     function sendLogin() {
-        fetch('/login', {
-            method: 'GET',
+        fetch("/login", {
+            method: "GET",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 username,
                 email,
-                password
-            })
-        })
+                password,
+            }),
+        });
     }
 
     function sendSignup() {
-        fetch('/login', {
-            method: 'POST',
+        fetch("/login", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 username,
                 email,
-                password
-            })
-        })
+                password,
+            }),
+        });
     }
 </script>
 
 <main>
-    <div class="header">
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <h1><img class="gamesImg" src="AereoArcadeIcon.png"/></h1>
+    <nav>
+        <div class="logo">
+            <img src="AereoArcadeIcon.png" alt="Aereo Arcade" />
+        </div>
 
-        <Button on:click={()=>{login=true}}>
-            <Label>
-                Log In
-            </Label>
-        </Button>
-        <Button on:click={()=>{signup=true}}>
-            <Label>
-                Sign Up
-            </Label>
-        </Button>
+        <button
+            on:click={() => {
+                login = true;
+            }}
+        >
+            Log In
+        </button>
 
-        <Overlay bind:active={overlay} on:click={()=>{signup=false; login=false;}}>
-            <input on:click|stopPropagation bind:value={username} type="text" placeholder="username">
-            <input on:click|stopPropagation bind:value={email} type="text" placeholder="email">
-            <input on:click|stopPropagation bind:value={password} type="password" placeholder="password">
+        <button
+            on:click={() => {
+                signup = true;
+            }}
+        >
+            Sign Up
+        </button>
+
+        <Overlay
+            bind:active={overlay}
+            on:click={() => {
+                signup = false;
+                login = false;
+            }}
+        >
+            <input
+                on:click|stopPropagation
+                bind:value={username}
+                type="text"
+                placeholder="username"
+            />
+            <input
+                on:click|stopPropagation
+                bind:value={email}
+                type="text"
+                placeholder="email"
+            />
+            <input
+                on:click|stopPropagation
+                bind:value={password}
+                type="password"
+                placeholder="password"
+            />
             {#if login}
                 <button on:click={sendLogin}>Log In</button>
             {/if}
@@ -69,70 +93,70 @@
                 <button on:click={sendSignup}>Sign Up</button>
             {/if}
         </Overlay>
-    </div>
+    </nav>
 
-    <div class="play">
-        <Button default href="/singleplayer">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="singleplayer.png"/>
-        </Button>
-
-        <Button default href="/multiplayer">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="multiplayer.png"/>
-        </Button>
+    <div class="main">
+        <a href="/singleplayer">
+            <button class="single">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="singleplayer.png" />
+            </button>
+        </a>
+        <a href="/multiplayer">
+            <button class="multi">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="multiplayer.png" />
+            </button>
+        </a>
     </div>
 
     <div class="bottom">
-        <Button default>
+        <button>
             <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="trivial.png"/>
-        </Button>
+            <img class="modes" src="trivial.png" />
+        </button>
 
-        <Fab href="/games">
+        <a href="/games">
             <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="stampsImg" src="stamps.png"/>
-        </Fab>
+            <img class="stampsImg" src="stamps.png" />
+        </a>
     </div>
-
 </main>
 
 <style>
-    .gamesImg {
-        width: 1000px;
-        aspect-ratio: 3;
-        
-    }
-    .modes {
-        width: 500px;
-        aspect-ratio: 2;
-    }
-    .stampsImg {
-        height: 500%; 
-        width: 125;
-        object-fit: contain
-    }
-    .bottom {
+    nav {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-self: stretch;
-        gap: 115px;
     }
-    h1 {
-        margin: 0;
-    }
-    main {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        height: 100%;
+
+    img {
         width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
-    div {
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        aspect-ratio: 1;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .main {
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-self: stretch;
-        gap: 10px;
+        height: 100%;
+    } 
+
+    .single {
+        width: 100%;
+        height: 100;
     }
 </style>
