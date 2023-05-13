@@ -17,6 +17,8 @@
                 email,
                 password,
             }),
+        }).then(()=> {
+            window.location.href = "/home";
         });
     }
 </script>
@@ -79,21 +81,8 @@
         </a>
     </div>
 
-    <div class="bottom">
-        <button>
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="trivial.png" />
-        </button>
-
-        <a href="/games">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img src="bolaMundo.png" />
-        </a>
-    </div>
-</main>
-
 <style>
-    nav {
+    div {
         display: flex;
         justify-content: space-between;
         align-items: center;
