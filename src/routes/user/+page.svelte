@@ -25,7 +25,7 @@
         <div>
             <section class="datos">
                 <div>
-                    Username: {user}
+                    Username: {data.user}
                 </div>
             </section>
             <section class="datos">
@@ -35,7 +35,7 @@
             </section>
             <section class="datos">
                 <div>
-                    VuelingClub account: {vuelingClub}
+                    VuelingClub account: {data.email}
                 </div>
             </section>
         </div>
@@ -63,13 +63,25 @@
         <img src="progressBar.png" alt="Progress Bar"/>
     </section>
     <nav>
-        <button on:click={logout}>
-            LogOut
-        </button>
+        <section class="exit">
+            <div>
+                <button on:click={logout}>
+                    LogOut
+                </button>
+            </div>
+            <div>
+                <button>
+                    <a href="/">Back</a>
+                </button>
+            </div>
+        </section>
     </nav>
 </main>
 
 <style>
+    .exit {
+        border-bottom: none;
+    }
     nav {
         display: flex;
         align-items: center;
@@ -92,7 +104,7 @@
         gap: 0rem;
         border-bottom: none;
         margin-top: 50px;
-        margin-left: 780px;
+        margin-left: 625px;
         margin-right: 500px;
     }
 
