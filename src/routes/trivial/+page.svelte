@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+   import Button, { Label, Icon } from '@smui/button';
 	let count = 0;
 	
 	function handleClick() {
@@ -14,15 +15,17 @@
             <li><img class=logo src="Logo_Vueling.png"/></li>
             <li><b>Points: </b></li>
             <li>a</li>
-            <li class="rigthb"><a class="mbutton" href="/">Back</a></li>
+            <li class="rigthb">
+            <Button href="/">
+                <b><Icon class="material-icons">arrow_back</Icon></b>
+                <b><Label class=mlabel>Back</Label></b>
+            </Button></li>
         </ul>
     </div>
 </div>
 
 
 <style>
-
-
     
     *{
         padding: 0;
@@ -54,14 +57,14 @@
     .rigthb{
         padding-left: 900px;
     }
-
-    .mbutton{
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        appearance: button;
-
-        text-decoration: none;
-        color: initial;
+    :global(.material-icons) {
+        color: black;
     }
+
+    :global(.mlabel) {
+        font-family: sans-serif;
+        color: black;
+    }
+
 
 </style>
