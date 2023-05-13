@@ -1,73 +1,187 @@
 <script lang="ts">
-  import Button, { Label } from '@smui/button';
-    import Fab, { Icon } from '@smui/fab';
+    import Overlay from "$lib/components/Overlay.svelte";
+    import type { PageData } from "./$types";
+
+    let login: boolean = false;
+    let username: string;
+    let email: string;
+    let password: string;
+
+    function sendLogin() {
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                email,
+                password,
+            }),
+        }).then(()=> {
+            window.location.href = "/home";
+        });
+    }
+
+    export let data: PageData;
 </script>
 
+<svelte:head>
+	<link rel="stylesheet" href="https://unpkg.com/mono-icons@1.2.1/iconfont/icons.css" >
+</svelte:head>
 <main>
-    <div class="header">
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <h1><img class="gamesImg" src="AereoArcadeIcon.png"/></h1>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Aereo Arcade" />
+        </div>
+
+        {#if data.session}
+        <a href = "/user">
+            <button>
+                <i class="mi mi-user">
+                    <span class="u-sr-only">
+                        User
+                    </span>
+                </i>
+            </button>
+        </a>
+
+        {:else}
+        <button
+            on:click={() => {
+                login = true;
+            }}
+        >
+            Log In
+        </button>
+
+        {/if}
+
+        <Overlay
+            bind:active={login}
+            on:click={() => {
+                login = false;
+            }}
+        >
+            <input
+                on:click|stopPropagation
+                bind:value={username}
+                type="text"
+                placeholder="username"
+            />
+            <input
+                on:click|stopPropagation
+                bind:value={email}
+                type="text"
+                placeholder="email"
+            />
+            <input
+                on:click|stopPropagation
+                bind:value={password}
+                type="password"
+                placeholder="password"
+            />
+            <button on:click={sendLogin}>Log In</button>
+        </Overlay>
+    </nav>
+
+    <div class="main">
+        <a href="/singleplayer">
+            <button class="single">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="singleplayer.png" />
+            </button>
+        </a>
+        <a href="/multiplayer">
+            <button class="multi">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="multiplayer.png" />
+            </button>
+        </a>
     </div>
-
-    <div>
-        <Button default href="/singleplayer">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="singleplayer.png"/>
-        </Button>
-
-        <Button default href="/multiplayer">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="multiplayer.png"/>
-        </Button>
-    </div>
-
     <div class="bottom">
-        <Button default>
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="trivial.png"/>
-        </Button>
-
-        <Fab href="/games">
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="stampsImg" src="stamps.png"/>
-        </Fab>
+        <a href="/multiplayer">
+            <button class="multi">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="trivial.png" />
+            </button>
+        </a>
+        <a href="/multiplayer">
+            <button class="multi">
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img src="bolaMundo.png" />
+            </button>
+        </a>
     </div>
-
 </main>
 
+
 <style>
-    .gamesImg {
-        width: 450px;
-        aspect-ratio: 3;
-        
+    nav {
+        display: flex;
+        background-color: whitesmoke;
+        justify-content: space-around;
     }
-    .modes {
-        width: 150px;
-        aspect-ratio: 2;
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    .stampsImg {
-        height: 125%; 
-        width: 125;
-        object-fit: contain
+
+    img {
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .logo {
+        width: 750px;
+        height: 160px;
+        aspect-ratio: 1;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: 100%;
+        margin-top: 50px;
     }
     .bottom {
         display: flex;
         align-items: center;
         justify-self: stretch;
-        gap: 115px;
-    }
-    h1 {
-        margin: 0;
+        gap: 120px;
     }
     main {
         display:flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 20px;
     }
     div {
         display: flex;
         align-items: center;
         justify-self: stretch;
+        gap: 10px;
     }
+    .mi {
+		font-size: 1.4rem;
+        line-height: 6;
+	}
+	
+	.u-sr-only {
+		position: absolute;
+        left: -10000px;
+        top: auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+	}
 </style>
