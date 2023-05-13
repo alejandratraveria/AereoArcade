@@ -39,7 +39,8 @@
         <a href = "/user">
             <button>
                 <i class="mi mi-user">
-                    <span class="u-sr-only">User
+                    <span class="u-sr-only">
+                        User
                     </span>
                 </i>
             </button>
@@ -172,14 +173,15 @@
     }
     .mi {
 		font-size: 1.4rem;
+        line-height: 5;
 	}
 	
 	.u-sr-only {
 		position: absolute;
-    left: -10000px;
-    top: auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+        left: -10000px;
+        top: auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
 	}
 </style>
