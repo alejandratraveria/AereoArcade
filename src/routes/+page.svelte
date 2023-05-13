@@ -1,10 +1,5 @@
 <script lang="ts">
-<<<<<<< HEAD
-	import Overlay from '$lib/components/Overlay.svelte';
-    import Button, { Label } from '@smui/button';
-=======
   import Button, { Label } from '@smui/button';
->>>>>>> cae91a205ef9052c9d050531b48df17db6457edf
     import Fab, { Icon } from '@smui/fab';
     import { text } from 'svelte/internal';
 
