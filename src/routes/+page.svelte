@@ -1,5 +1,5 @@
-<script>
-	import Button, { Label } from '@smui/button';
+<script lang="ts">
+  import Button, { Label } from '@smui/button';
     import Fab, { Icon } from '@smui/fab';
 </script>
 
