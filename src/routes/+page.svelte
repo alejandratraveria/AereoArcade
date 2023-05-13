@@ -8,7 +8,17 @@
 <div class="flexy">
     <div class="margins">
       <Fab href="/gamesHub">
-        <Icon class="material-icons">favorite</Icon>
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <img class="image" src="earth.png"/>
       </Fab>
     </div>
 </div>
+
+<style>
+  .image {
+    height: 125%; 
+    width: 125;
+    object-fit: contain
+  }
+
+</style>
