@@ -1,5 +1,6 @@
 <script lang="ts">
     import Overlay from "$lib/components/Overlay.svelte";
+    import type { PageData } from "./$types";
 
     let login: boolean = false;
     let username: string;
@@ -21,14 +22,30 @@
             window.location.href = "/home";
         });
     }
+
+    export let data: PageData;
 </script>
 
+<svelte:head>
+	<link rel="stylesheet" href="https://unpkg.com/mono-icons@1.2.1/iconfont/icons.css" >
+</svelte:head>
 <main>
     <nav>
         <div class="logo">
             <img src="logo.png" alt="Aereo Arcade" />
         </div>
 
+        {#if data.session}
+        <a href = "/user">
+            <button>
+                <i class="mi mi-user">
+                    <span class="u-sr-only">User
+                    </span>
+                </i>
+            </button>
+        </a>
+
+        {:else}
         <button
             on:click={() => {
                 login = true;
@@ -37,6 +54,7 @@
             Log In
         </button>
 
+        {/if}
 
         <Overlay
             bind:active={login}
@@ -116,8 +134,8 @@
     }
 
     .logo {
-        width: 500px;
-        height: 100px;
+        width: 750px;
+        height: 160px;
         aspect-ratio: 1;
     }
 
@@ -132,13 +150,13 @@
         justify-content: center;
         align-items: stretch;
         height: 100%;
-
+        margin-top: 50px;
     }
     .bottom {
         display: flex;
         align-items: center;
         justify-self: stretch;
-        gap: 115px;
+        gap: 120px;
     }
     main {
         display:flex;
@@ -152,4 +170,16 @@
         justify-self: stretch;
         gap: 10px;
     }
+    .mi {
+		font-size: 1.4rem;
+	}
+	
+	.u-sr-only {
+		position: absolute;
+    left: -10000px;
+    top: auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+	}
 </style>
