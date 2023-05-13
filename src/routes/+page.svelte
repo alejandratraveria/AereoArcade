@@ -19,7 +19,7 @@
                 password,
             }),
         }).then(()=> {
-            window.location.href = "/home";
+            location.reload();
         });
     }
 
