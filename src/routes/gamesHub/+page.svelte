@@ -1,22 +1,24 @@
+
 <div class="title">
-    <h1>Singleplayer</h1> 
+    <h1 class=myfont>Singleplayer</h1> 
 </div>
 
-    <div class="ButtonContainer">
-        {#each Array(8) as _unused, i}
-        <Button class="lbutton">
-            <Label>Game {i + 1}</Label>
-        </Button>
-        {/each}
-    </div>
+<div class="ButtonContainer">
+    {#each Array(8) as _unused, i}
+    <Button class="lbutton">
+        <Label>Game {i + 1}</Label>
+    </Button>
+    {/each}
+</div>
 
-  <script lang="ts">
+<script lang="ts">
     import Button, {Label} from '@smui/button';
-  </script>
-   
-  <style>
+</script>
+
+<style>
 
     * :global(.lbutton) {
+        padding-top: 25px;
         width: 250px;
         height: 250px;
         display: flex;
@@ -25,15 +27,23 @@
         color: var(--mdc-theme-on-secondary, #fff);
     }
 
-    .ButtonContainer {
+    .myfont {
+        font-family: 'Sofia', sans-serif;
+        color: darkgray;
+    }
 
+    .ButtonContainer {
         display: flex;
+        padding-top: 25px;
+        padding-left: 100px;
+        padding-right: 100px;
         justify-content: space-around;
         flex-wrap: wrap;
+        gap: 25px;
     }
 
     .title { 
-        background-color: yellow;
+        background-color: rgb(254 204 1);
         padding: 5px;
     }
   </style>
