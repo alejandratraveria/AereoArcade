@@ -1,3 +1,5 @@
+<script lang="ts">
+</script>
 
 <div class="title">
     <h1 class=myfont>Multiplayer</h1> 
@@ -5,15 +7,13 @@
 
 <div class="ButtonContainer">
     {#each Array(8) as _unused, i}
-    <Button class="lbutton">
-        <Label>Game {i + 1}</Label>
-    </Button>
+    <button class="lbutton">
+        Game {i + 1}
+    </button>
     {/each}
 </div>
 
-<script lang="ts">
-    import Button, {Label} from '@smui/button';
-</script>
+
 
 <style>
 
