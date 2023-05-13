@@ -5,7 +5,7 @@
 
     function sendLogin() {
         fetch("/login", {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
