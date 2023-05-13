@@ -9,11 +9,11 @@
     </div>
 
     <div>
-        <Button default href="/games">
+        <Button default href="/gamesHub">
             <img class="modes" src="singleplayer.png"/>
         </Button>
 
-        <Button default href="/games">
+        <Button default href="/gamesHub">
             <img class="modes" src="multiplayer.png"/>
         </Button>
     </div>
