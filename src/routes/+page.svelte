@@ -173,7 +173,7 @@
     }
     .mi {
 		font-size: 1.4rem;
-        line-height: 5;
+        line-height: 6;
 	}
 	
 	.u-sr-only {
