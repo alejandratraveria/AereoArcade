@@ -23,5 +23,4 @@ model Ranking {
     User User @relation(fields: [user], references: [id])
     user String @id @unique
     points Int @default(0)
-    rankingPos Int @unique
 }

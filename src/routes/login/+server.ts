@@ -26,8 +26,7 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
         await prisma.ranking.create({
             data: {
                 user: newUser.id,
-                rankingPos: 
-            }
+            },
         });
     }
     else {
