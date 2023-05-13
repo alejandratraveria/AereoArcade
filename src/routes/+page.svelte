@@ -1,6 +1,10 @@
 <script lang="ts">
+<<<<<<< HEAD
 	import Overlay from '$lib/components/Overlay.svelte';
     import Button, { Label } from '@smui/button';
+=======
+  import Button, { Label } from '@smui/button';
+>>>>>>> cae91a205ef9052c9d050531b48df17db6457edf
     import Fab, { Icon } from '@smui/fab';
     import { text } from 'svelte/internal';
 
@@ -44,6 +48,7 @@
 
 <main>
     <div class="header">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <h1><img class="gamesImg" src="AereoArcadeIcon.png"/></h1>
 
         <Button on:click={()=>{login=true}}>
@@ -71,39 +76,51 @@
     </div>
 
     <div>
-        <Button default href="/games">
-            <Label>SinglePlayer</Label>
+        <Button default href="/singleplayer">
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <img class="modes" src="singleplayer.png"/>
         </Button>
 
-        <Button default href="/games">
-            <Label>MultiPlayer</Label>
+        <Button default href="/multiplayer">
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <img class="modes" src="multiplayer.png"/>
         </Button>
     </div>
 
-    <div class="trivial">
+    <div class="bottom">
         <Button default>
-            <Label>Trivial</Label>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <img class="modes" src="trivial.png"/>
         </Button>
 
         <Fab href="/games">
             <!-- svelte-ignore a11y-missing-attribute -->
             <img class="stampsImg" src="stamps.png"/>
-          </Fab>
+        </Fab>
     </div>
 
 </main>
 
 <style>
-
     .gamesImg {
         width: 450px;
         aspect-ratio: 3;
         
     }
+    .modes {
+        width: 150px;
+        aspect-ratio: 2;
+    }
     .stampsImg {
         height: 125%; 
         width: 125;
         object-fit: contain
+    }
+    .bottom {
+        display: flex;
+        align-items: center;
+        justify-self: stretch;
+        gap: 115px;
     }
     h1 {
         margin: 0;
@@ -112,6 +129,10 @@
         display:flex;
         flex-direction: column;
         align-items: center;
+<<<<<<< HEAD
+=======
+        gap: 20px;
+>>>>>>> cae91a205ef9052c9d050531b48df17db6457edf
     }
     div {
         display: flex;
