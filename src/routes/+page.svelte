@@ -1,5 +1,6 @@
 <script>
 	import Button, { Label } from '@smui/button';
+    import Fab, { Icon } from '@smui/fab';
 </script>
 
 <main>
@@ -18,13 +19,14 @@
     </div>
 
     <div>
-        <Button>
+        <Button default>
             <Label>Trivial</Label>
         </Button>
 
-        <Button>
-            <Label>Stamps</Label>
-        </Button>
+        <Fab href="/games">
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <img class="stampsImg" src="stamps.png"/>
+          </Fab>
     </div>
 
 </main>
@@ -36,6 +38,12 @@
     .gamesImg {
         width: 450px;
         aspect-ratio: 3;
+        
+    }
+    .stampsImg {
+        height: 125%; 
+        width: 125;
+        object-fit: contain
     }
     h1 {
         margin: 0;
@@ -47,5 +55,6 @@
     div {
         display: flex;
         align-items: center;
+        justify-self: stretch;
     }
 </style>
