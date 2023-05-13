@@ -10,23 +10,23 @@
 
     <div>
         <Button default href="/games">
-            <Label>SinglePlayer</Label>
+            <img class="modes" src="singleplayer.png"/>
         </Button>
 
         <Button default href="/games">
-            <Label>MultiPlayer</Label>
+            <img class="modes" src="multiplayer.png"/>
         </Button>
     </div>
 
-    <div>
+    <div class="bottom">
         <Button default>
-            <Label>Trivial</Label>
+            <img class="modes" src="trivial.png"/>
         </Button>
 
         <Fab href="/games">
             <!-- svelte-ignore a11y-missing-attribute -->
             <img class="stampsImg" src="stamps.png"/>
-          </Fab>
+        </Fab>
     </div>
 
 </main>
@@ -40,10 +40,20 @@
         aspect-ratio: 3;
         
     }
+    .modes {
+        width: 150px;
+        aspect-ratio: 2;
+    }
     .stampsImg {
         height: 125%; 
         width: 125;
         object-fit: contain
+    }
+    .bottom {
+        display: flex;
+        align-items: center;
+        justify-self: stretch;
+        gap: 115px;
     }
     h1 {
         margin: 0;
@@ -51,6 +61,8 @@
     main {
         display:flex;
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
     div {
         display: flex;
