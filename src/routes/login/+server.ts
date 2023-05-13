@@ -23,11 +23,6 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
                 token: token,
             }
         });
-        await prisma.ranking.create({
-            data: {
-                user: newUser.id,
-            },
-        });
     }
     else {
         await prisma.user.update({

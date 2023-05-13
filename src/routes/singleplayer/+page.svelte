@@ -29,7 +29,6 @@
         font-family: 'Sofia', sans-serif;
         color: darkgray;
     }
-
     .ButtonContainer {
         display: flex;
         padding-top: 25px;
@@ -41,7 +40,7 @@
     }
 
     .title { 
-        background-color: rgb(254 204 1);
+        display: flex;        background-color: rgb(254 204 1);
         padding: 5px;
     }
   </style>

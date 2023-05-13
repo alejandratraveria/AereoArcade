@@ -10,6 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@smui/button": "^7.0.0-beta.8",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"prisma": "^4.14.0",
@@ -21,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prisma/client": "^4.14.0"
+		"@prisma/client": "^4.14.0",
+		"svelte-material-ui": "^7.0.0-beta.8"
 	}
 }

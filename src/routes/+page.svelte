@@ -19,7 +19,7 @@
                 password,
             }),
         }).then(()=> {
-            window.location.href = "/home";
+            location.reload();
         });
     }
 
@@ -100,13 +100,13 @@
         </a>
     </div>
     <div class="bottom">
-        <a href="/multiplayer">
+        <a href="/trivial">
             <button class="multi">
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <img src="trivial.png" />
             </button>
         </a>
-        <a href="/multiplayer">
+        <a href="/stamps">
             <button class="multi">
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <img src="bolaMundo.png" />
@@ -119,7 +119,7 @@
 <style>
     nav {
         display: flex;
-        background-color: whitesmoke;
+        background-color: rgb(210, 209, 209);
         justify-content: space-around;
     }
     div {
@@ -184,4 +184,9 @@
         height:1px;
         overflow:hidden;
 	}
+    :global(body) {
+				background: rgb(255,255,255);
+				background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(252,235,119,1) 100%);
+				overflow: hidden;
+    }
 </style>
