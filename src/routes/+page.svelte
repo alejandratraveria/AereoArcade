@@ -42,7 +42,7 @@
 <main>
     <nav>
         <div class="logo">
-            <img src="AereoArcadeIcon.png" alt="Aereo Arcade" />
+            <img src="logo.png" alt="Aereo Arcade" />
         </div>
 
         <button
@@ -113,12 +113,12 @@
     <div class="bottom">
         <button>
             <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="modes" src="trivial.png" />
+            <img src="trivial.png" />
         </button>
 
         <a href="/games">
             <!-- svelte-ignore a11y-missing-attribute -->
-            <img class="stampsImg" src="stamps.png" />
+            <img src="bolaMundo.png" />
         </a>
     </div>
 </main>
@@ -131,7 +131,7 @@
     }
 
     img {
-        width: 100%;
+        width: 50%;
         height: 100%;
         object-fit: contain;
     }
@@ -154,9 +154,4 @@
         align-items: center;
         height: 100%;
     } 
-
-    .single {
-        width: 100%;
-        height: 100;
-    }
 </style>
