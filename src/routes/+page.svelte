@@ -106,7 +106,7 @@
                 <img src="trivial.png" />
             </button>
         </a>
-        <a href="/multiplayer">
+        <a href="/stamps">
             <button class="multi">
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <img src="bolaMundo.png" />

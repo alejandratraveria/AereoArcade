@@ -2,10 +2,7 @@
 	export let data;
 	let pos = 1;
 	let points = data.points;
-
-    let user = 'demoUser';
     let name = 'Demo user';
-    let vuelingClub = 'demoUser@gmail.com';
 
     const logout = () => fetch("/logout", {
             method: "GET",

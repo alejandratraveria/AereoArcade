@@ -1,10 +1,5 @@
 <script>
-	let count = 0;
     let points = 0;
-	
-	function handleClick() {
-		count += 1;
-	}
 </script>
 
 
@@ -100,5 +95,4 @@
         text-decoration: none;
         color: initial;
     }
-
 </style>
