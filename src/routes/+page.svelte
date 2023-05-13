@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button, { Label } from '@smui/button';
+  import Overlay from '$lib/components/Overlay.svelte';
     import Fab, { Icon } from '@smui/fab';
     import { text } from 'svelte/internal';
 
