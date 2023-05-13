@@ -2,29 +2,11 @@
     import Overlay from "$lib/components/Overlay.svelte";
 
     let login: boolean = false;
-    let signup: boolean = false;
-
-    $: overlay = login || signup;
-
     let username: string;
     let email: string;
     let password: string;
 
     function sendLogin() {
-        fetch("/login", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username,
-                email,
-                password,
-            }),
-        });
-    }
-
-    function sendSignup() {
         fetch("/login", {
             method: "POST",
             headers: {
@@ -53,18 +35,10 @@
             Log In
         </button>
 
-        <button
-            on:click={() => {
-                signup = true;
-            }}
-        >
-            Sign Up
-        </button>
 
         <Overlay
-            bind:active={overlay}
+            bind:active={login}
             on:click={() => {
-                signup = false;
                 login = false;
             }}
         >
@@ -86,12 +60,7 @@
                 type="password"
                 placeholder="password"
             />
-            {#if login}
                 <button on:click={sendLogin}>Log In</button>
-            {/if}
-            {#if signup}
-                <button on:click={sendSignup}>Sign Up</button>
-            {/if}
         </Overlay>
     </nav>
 
@@ -137,7 +106,7 @@
     }
 
     .logo {
-        width: 100px;
+        width: 500px;
         height: 100px;
         aspect-ratio: 1;
     }
@@ -153,5 +122,23 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-    } 
+    }
+    .bottom {
+        display: flex;
+        align-items: center;
+        justify-self: stretch;
+        gap: 115px;
+    }
+    main {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        justify-self: stretch;
+        gap: 10px;
+    }
 </style>

@@ -32,7 +32,7 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
     }
 
     const user = await prisma.user.findUnique({
-        where: { email: data.mail }
+        where: { email: data.email as string }
     });
 
     if (user) throw error(409, "User already exists");
@@ -41,8 +41,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
     await prisma.user.create({
         data: {
-            email: data.mail,
-            name: data.name,
+            email: data.email,
+            name: data.username,
             password: data.password,
             token: token,
         }

@@ -6,16 +6,16 @@ import type { User } from '@prisma/client';
 export const session: Handle = async ({ event, resolve }) => {
 	let sessionToken: string | undefined = event.cookies.get('session');
 
-	try {
-		const session = await prisma.user.findUnique({
+    if (sessionToken) {
+        const session = await prisma.user.findUnique({
 			where: {
 				token: sessionToken
 			}
 		});
 		event.locals.session = session as User;
-	} catch (err) {
-		console.error(err)
-	}
+    } else {
+		event.locals.session = undefined;
+    }
 
 	return await resolve(event);
 };
