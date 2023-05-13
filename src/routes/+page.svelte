@@ -10,12 +10,12 @@
     </div>
 
     <div>
-        <Button default href="/gamesHub">
+        <Button default href="/singleplayer">
             <!-- svelte-ignore a11y-missing-attribute -->
             <img class="modes" src="singleplayer.png"/>
         </Button>
 
-        <Button default href="/gamesHub">
+        <Button default href="/multiplayer">
             <!-- svelte-ignore a11y-missing-attribute -->
             <img class="modes" src="multiplayer.png"/>
         </Button>
